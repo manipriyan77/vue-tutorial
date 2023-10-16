@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer=""></script>
+    <script src="app2.js" defer=""></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- !!BOTH Syntax works for events -->
+      <!-- <button v-on:click="addCount">Add</button> -->
+      <button v-on:click="addCount(5)">Add 5</button>
+      <button v-on:click="reduceCount(5)">Remove</button>
+      <p v-once>Starting counter: {{counter}}</p>
+      <!-- **************************** -->
+      <p>Result: {{ counter }}</p>
+
+      <!-- <input type="text" v-bind:value="name" v-on:input="setName($event,"GS")" /> -->
+      <input type="text" v-model="name" />
+      <!-- V Model is equal to v-bind:value v-on:input -->
+
+      <button v-on:click="resetInput()">Reset Input</button>
+      <p>Your Name:{{name}}</p>
+      <p>Your FullName:{{fullName}}</p>
+      <p>Your FullName:{{myFullName}}</p>
+
+      <!-- **************************** -->
+      <!-- Event modifiers -->
+      <!-- <form v-on:submit.prevent> -->
+      <!-- ***************************** -->
+
+      <form v-on:submit="submitForm($event)">
+        <input type="text" />
+        <button>Sign up</button>
+      </form>
+    </section>
+  </body>
+</html>
