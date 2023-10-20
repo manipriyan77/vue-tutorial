@@ -9,23 +9,22 @@ const app = Vue.createApp({
   watch: {
     name(value) {
       if (value === '') {
+        //value is the lastest value of the data property
         this.myFullname === '';
       } else {
         //   this.myFullname = value + ' ' + 'GS';
-
-        this.myFullname = this.name + ' ' + 'GS';
+        this.myFullname = value + ' ' + 'GS';
       }
     },
   },
   computed: {
-    fullName() {
-      console.log('renderinf');
-
-      if (this.name === '') {
-        return '';
-      }
-      return this.name + ' ' + 'GS';
-    },
+    // fullName() {
+    //   console.log('renderinf');
+    //   if (this.name === '') {
+    //     return '';
+    //   }
+    //   return this.name + ' ' + 'GS';
+    // },
   },
   methods: {
     addCount(num) {
