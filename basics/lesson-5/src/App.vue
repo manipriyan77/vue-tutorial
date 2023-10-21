@@ -4,7 +4,7 @@
       :topic-title="activeTopic?.title"
       :text="activeTopic?.fullText"
     ></active-element>
-    <knowledge-base :topics="topics" @select-topic="activateTopic"></knowledge-base>
+    <knowledge-base :topics="topics"></knowledge-base>
   </div>
 </template>
 
@@ -44,16 +44,16 @@ export default {
       this.activeTopic = this.topics.find((topic) => topic.id === topicId);
     },
   },
-  // mounted() {
-  //   setTimeout(() => {
-  //     this.topics.push({
-  //       id: 'crypto',
-  //       title: 'The Crypto Investing',
-  //       description: 'Investing before it is too late',
-  //       fullText: 'Bitcoin is the future of money and it gonna make you and your mom rich',
-  //     });
-  //   }, 3000);
-  // },
+  mounted() {
+    setTimeout(() => {
+      this.topics.push({
+        id: 'crypto',
+        title: 'The Crypto Investing',
+        description: 'Investing before it is too late',
+        fullText: 'Bitcoin is the future of money and it gonna make you and your mom rich',
+      });
+    }, 3000);
+  },
 };
 </script>
 

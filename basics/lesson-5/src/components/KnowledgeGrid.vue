@@ -6,7 +6,6 @@
       :id="topic.id"
       :topic-name="topic.title"
       :description="topic.description"
-      @select-topic="$emit('select-topic', $event)"
     ></knowledge-element>
   </ul>
 </template>
@@ -14,6 +13,9 @@
 <script>
 export default {
   inject: ['topics'],
-  emits: ['select-topic'],
+  mounted() {
+    // Log the topics when the component is mounted
+    console.log('Topics:', this.topics);
+  },
 };
 </script>
