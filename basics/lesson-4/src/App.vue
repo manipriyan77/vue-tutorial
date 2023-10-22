@@ -5,14 +5,15 @@
     </header>
     <add-friend @add-friend="addFriend"></add-friend>
     <ul>
+      <!-- : === v-bind: -->
       <friend-contact
         v-for="friend in friends"
-        v-bind:key="friend.id"
-        v-bind:name="friend.name"
-        v-bind:is-favourite="friend.isFavourite"
-        v-bind:phone-number="friend.phone"
-        v-bind:address="friend.address"
-        v-bind:id="friend.id"
+        :key="friend.id"
+        :name="friend.name"
+        :is-favourite="friend.isFavourite"
+        :phone-number="friend.phone"
+        :address="friend.address"
+        :id="friend.id"
         @toggle-favourite="toggleFavouriteStatus"
         @delete-friend="deleteFriend"
       ></friend-contact>
